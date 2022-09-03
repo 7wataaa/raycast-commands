@@ -29,9 +29,9 @@ do
   if [[ "$file" == *".mov" ]] && [[ ! -e "${file//.mov/.mp4}" ]]; then
     echo "Converting ${file}..."
 
-    tmpOutputName="${file//.mov/.mp4}"
+    tmp_output_name="${file//.mov/.mp4}"
     # Space characters need to be escaped
-    bash -c "$FFMPEG_PATH -i ${file// /\ } ${tmpOutputName// /\ }"
+    bash -c "$FFMPEG_PATH -i ${file// /\ } ${tmp_output_name// /\ }"
   fi
 done
 
