@@ -13,9 +13,11 @@
 # @raycast.description Convert mov to mp4 in Desktop
 # @raycast.authorURL https://github.com/7wataaa
 
-cd "$HOME/Desktop" || exit 1
-
 FFMPEG_PATH="/usr/local/bin/ffmpeg"
+
+WORKING_DIR="$HOME/Desktop"
+
+cd "$WORKING_DIR" || exit 1
 
 if [[ ! -e "$FFMPEG_PATH" ]]; then
   echo "ERROR: $FFMPEG_PATH is not installed."
