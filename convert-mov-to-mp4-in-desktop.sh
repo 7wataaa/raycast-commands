@@ -24,9 +24,8 @@ if [[ ! -e "$FFMPEG_PATH" ]]; then
   exit 1
 fi
 
-for file in *
-do
-  if [[ "$file" == *".mov" ]] && [[ ! -e "${file//.mov/.mp4}" ]]; then
+for file in *.mov; do
+  if [[ ! -e "${file//.mov/.mp4}" ]]; then
     echo "Converting ${file}..."
 
     tmp_output_name="${file//.mov/.mp4}"
@@ -34,5 +33,3 @@ do
     bash -c "$FFMPEG_PATH -i ${file// /\ } ${tmp_output_name// /\ }"
   fi
 done
-
-wait
