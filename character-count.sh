@@ -20,7 +20,7 @@ length=$(echo "${str}" | wc -m | awk '{print $1}')
 LFs=$(echo "${str}" | wc -l | awk '{print $1}')
 spaces=$(echo "${str}" | grep -o " " | wc -l | awk '{print $1}')
 
-show_str_detail () {
+show_str_detail() {
   echo "Length: ${length}"
   echo "LFs: ${LFs}"
   echo "Spaces: ${spaces}"
