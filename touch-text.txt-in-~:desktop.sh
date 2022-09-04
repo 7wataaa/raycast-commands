@@ -14,6 +14,7 @@
 # @raycast.authorURL https://github.com/7wataaa
 
 if [[ $1 =~ [\\\/:\*\?\"\<\>\|] ]] || [[ $1 =~ ' ' ]]; then
+  echo 'Contains invalid characters. \/:*?"<>| (space)'
   exit 1
 fi
 
