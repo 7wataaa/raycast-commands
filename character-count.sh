@@ -22,7 +22,7 @@ spaces=$(echo "${str}" | grep -o " " | wc -l | awk '{print $1}')
 
 show_str_detail() {
   echo "Length: ${length}"
-  echo "LFs: ${LFs}"
+  echo "LFs   : ${LFs}"
   echo "Spaces: ${spaces}"
   echo
   echo "Length - LFs         : $((length - LFs))"
