@@ -16,7 +16,7 @@ LANG=ja_JP.UTF-8
 
 str=$(pbpaste -Prefer txt)
 
-length=$(echo "${str}" | nkf -w80 | wc -m | awk '{print $1}')
+length=$(echo "${str}" | wc -m | awk '{print $1}')
 LFs=$(echo "${str}" | wc -l | awk '{print $1}')
 spaces=$(echo "${str}" | grep -o " " | wc -l | awk '{print $1}')
 
