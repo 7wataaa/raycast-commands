@@ -14,6 +14,17 @@
 
 LANG=ja_JP.UTF-8
 
-echo "Length: $(pbpaste -Prefer txt | nkf -w80 | wc -m | awk '{print $1}')"
+str=$(pbpaste -Prefer txt)
+
+length=$(echo "${str}" | nkf -w80 | wc -m | awk '{print $1}')
+LFs=$(echo "${str}" | wc -l | awk '{print $1}')
+spaces=$(echo "${str}" | grep -o " " | wc -l | awk '{print $1}')
+
+echo "Length: ${length}"
+echo "LFs: ${LFs}"
+echo "Spaces: ${spaces}"
 echo
-echo "String: $(pbpaste -Prefer txt)"
+echo "Length - LFs         : $((length - LFs))"
+echo "Length - LFs - Spaces: $((length - LFs - spaces))"
+echo
+echo "String: ${str}"
